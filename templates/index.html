@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <title>To-do list</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <h1>Mi lista de tareas</h1>
+    <form method="POST" action="/agregar">
+    <input type="text" name="tarea" placeholder="Nueva tarea">
+    <input type="text" name="descripcion" placeholder="Descripción (opcional)">
+    <button type="submit">Agregar</button>
+  
+ </form>
+  <ul>
+    {% for tarea in tareas %}
+        <li>
+             <div>
+               {{ tarea.contenido }}
+               <p>{{ tarea.descripcion}}</p>
+             </div>
+             <a href="/eliminar/{{ tarea.id }}">Eliminar</a>
+             
+        </li>
+    {% endfor %}
+  </ul>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="{{ url_for('static', filename='particles.js') }}"></script>
+</body>
+
+
+
+</html>
