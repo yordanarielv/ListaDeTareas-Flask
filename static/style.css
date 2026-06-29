@@ -123,3 +123,35 @@ a:hover {
     color: #e94560;
     font-size: 0.9rem;
 }
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    ul {
+        width: 100%;
+    }
+
+    .auth-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    a {
+        padding: 0.5rem 1rem;
+    }
+}
